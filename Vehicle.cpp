@@ -7,14 +7,8 @@
 
 
 Vehicle::Vehicle() // parameterless constructor realise
-{
-    brand_ = "";
-    name_ = "";
-    power_ = 0;
-    status_ = false;
-    year_ = 0;
-    run_ = 0;
-}
+        :brand_(), name_(), power_(0), status_(false), year_(0), run_(0)
+{}
 
 Vehicle::Vehicle(std::string brand, std::string name, unsigned int power, bool status, unsigned int year, unsigned int run)
         : brand_(std::move(brand)), name_(std::move(name)), power_(power), status_(status), year_(year), run_(run)

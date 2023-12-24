@@ -7,11 +7,11 @@
 
 
 Vehicle::Vehicle() // parameterless constructor realise
-        :brand_(), name_(), power_(0), status_(false), year_(0), run_(0)
+        :brand_(), name_(), power_(0), status_(false), year_(0), run_(0), cur_user_("None")
 {}
 
-Vehicle::Vehicle(std::string brand, std::string name, unsigned int power, bool status, unsigned int year, unsigned int run)
-        : brand_(std::move(brand)), name_(std::move(name)), power_(power), status_(status), year_(year), run_(run)
+Vehicle::Vehicle(std::string brand, std::string name, unsigned int power, bool status, unsigned int year, unsigned int run, std::string cur_user)
+        : brand_(std::move(brand)), name_(std::move(name)), power_(power), status_(status), year_(year), run_(run), cur_user_(std::move(cur_user))
 {}
 
 
@@ -24,6 +24,7 @@ Vehicle::~Vehicle() // destructor realise
     status_ = false;
     year_ = 0;
     run_ = 0;
+    cur_user_ = "";
 }
 
 // getters and setters
@@ -75,4 +76,25 @@ void Vehicle::set_status(bool status)
 bool Vehicle::get_status() const
 {
     return status_;
+}
+
+void Vehicle::set_cur_user(std::string cur_user)
+{
+    cur_user_ = std::move(cur_user);
+}
+
+std::string Vehicle::get_cur_user() const
+{
+    return cur_user_;
+}
+
+// methods
+void Vehicle::demo() const
+{
+    std::cout << this->get_brand()  << " - brand"  <<  std::endl;
+    std::cout << this->get_name()   <<  " - name"  << std::endl;
+    std::cout << this->get_power()  <<  " - power" << std::endl;
+    std::cout << (this->get_status() ? "True" : "False") <<  " - status" << std::endl;
+    std::cout << this->get_year() <<  " - year"    << std::endl;
+    std::cout << this->get_cur_user() << " - current user" << std::endl;
 }

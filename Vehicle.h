@@ -16,13 +16,14 @@ protected:
     bool status_;
     unsigned int year_;
     unsigned int run_;
+    std::string cur_user_;
 
 public:
     // parameterless constructor realise
     Vehicle();
 
     // constructor with parameters realise
-    Vehicle(std::string brand, std::string name, unsigned int power, bool status, unsigned int year, unsigned int run);
+    Vehicle(std::string brand, std::string name, unsigned int power, bool status, unsigned int year, unsigned int run, std::string cur_user);
 
 
     // destructor
@@ -48,6 +49,12 @@ public:
     void set_status(bool status);
 
     bool get_status() const;
+
+    void set_cur_user(std::string cur_user);
+
+    std::string get_cur_user() const;
+    // methods
+    virtual void demo() const;
 };
 
 

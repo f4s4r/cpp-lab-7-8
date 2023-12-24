@@ -17,13 +17,15 @@ protected:
     unsigned int year_;
     unsigned int run_;
     std::string cur_user_;
+    int price_;
+    int last_service_;
 
 public:
     // parameterless constructor realise
     Vehicle();
 
     // constructor with parameters realise
-    Vehicle(std::string brand, std::string name, unsigned int power, bool status, unsigned int year, unsigned int run, std::string cur_user);
+    Vehicle(std::string brand, std::string name, unsigned int power, bool status, unsigned int year, unsigned int run, std::string cur_user, int price, int last_service);
 
 
     // destructor
@@ -53,6 +55,14 @@ public:
     void set_cur_user(std::string cur_user);
 
     std::string get_cur_user() const;
+
+    void set_price(int price);
+
+    int get_price() const;
+
+    void set_last_service(int last_service);
+
+    int get_last_service() const;
     // methods
     virtual void demo() const;
 };

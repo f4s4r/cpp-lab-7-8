@@ -10,13 +10,13 @@ class Car : public Vehicle{
 protected:
     int num_of_doors_;
     int num_of_seats_;
-    int price_;
-    int last_service_;
+    const std::string category_ = "B";
+
 public:
     // parameterless constructor realise
     Car();
     // constructor realise
-    Car(std::string brand, std::string name, unsigned int power, bool status, unsigned int year, unsigned int run, std::string cur_user, int num_of_doors, int num_of_seats, int price, int last_service);
+    Car(std::string brand, std::string name, unsigned int power, bool status, unsigned int year, unsigned int run, std::string cur_user, int price, int last_service, int num_of_doors, int num_of_seats);
     // destructor realise
     ~Car();
 
@@ -28,14 +28,6 @@ public:
     void set_num_of_seats(int num_of_seats);
 
     int get_num_of_seats() const;
-
-    void set_price(int price);
-
-    int get_price() const;
-
-    void set_last_service(int last_service);
-
-    int get_last_service() const;
 
     void demo() const override;
 };

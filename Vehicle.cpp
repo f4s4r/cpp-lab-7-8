@@ -7,11 +7,11 @@
 
 
 Vehicle::Vehicle() // parameterless constructor realise
-        :brand_(), name_(), power_(0), status_(false), year_(0), run_(0), cur_user_("None")
+        :brand_(), name_(), power_(0), status_(false), year_(0), run_(0), cur_user_("None"), price_(0), last_service_(0)
 {}
 
-Vehicle::Vehicle(std::string brand, std::string name, unsigned int power, bool status, unsigned int year, unsigned int run, std::string cur_user)
-        : brand_(std::move(brand)), name_(std::move(name)), power_(power), status_(status), year_(year), run_(run), cur_user_(std::move(cur_user))
+Vehicle::Vehicle(std::string brand, std::string name, unsigned int power, bool status, unsigned int year, unsigned int run, std::string cur_user, int price, int last_service)
+        : brand_(std::move(brand)), name_(std::move(name)), power_(power), status_(status), year_(year), run_(run), cur_user_(std::move(cur_user)), price_(price), last_service_(last_service)
 {}
 
 
@@ -55,12 +55,12 @@ void Vehicle::set_power(unsigned int power)
 
 unsigned int Vehicle::get_power() const
 {
-    return power_;
+    return this->power_;
 }
 
 void Vehicle::set_year(unsigned int year)
 {
-    power_ = year;
+    year_ = year;
 }
 
 unsigned int Vehicle::get_year() const
@@ -88,6 +88,26 @@ std::string Vehicle::get_cur_user() const
     return cur_user_;
 }
 
+void Vehicle::set_price(int price)
+{
+    price_ = price;
+}
+
+int Vehicle::get_price() const
+{
+    return price_;
+}
+
+void Vehicle::set_last_service(int last_service)
+{
+    last_service_ = last_service;
+}
+
+int Vehicle::get_last_service() const
+{
+    return last_service_;
+}
+
 // methods
 void Vehicle::demo() const
 {
@@ -97,4 +117,6 @@ void Vehicle::demo() const
     std::cout << (this->get_status() ? "True" : "False") <<  " - status" << std::endl;
     std::cout << this->get_year() <<  " - year"    << std::endl;
     std::cout << this->get_cur_user() << " - current user" << std::endl;
+    std::cout << this->get_price() << " - rent price" << std::endl;
+    std::cout << this->get_last_service() << " - last service" << std::endl;
 }

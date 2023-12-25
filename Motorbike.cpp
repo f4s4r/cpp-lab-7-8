@@ -59,5 +59,6 @@ void Motorbike::demo() const
             std::cout << "Unknown type" << std::endl;
             break;
     }
+    this->record_.demo(this->get_id());
     std::cout << "------" << std::endl;
 }

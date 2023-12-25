@@ -8,20 +8,16 @@
 
 class MaintenanceRecord {
 private:
-    size_t id_;
     std::string* services_;
     int num_serv_;
     std::string cmnt_to_lst_serv_;
 public:
     //constructor
     MaintenanceRecord();
-    MaintenanceRecord(size_t id, int num_serv, std::string comment);
+    MaintenanceRecord(int num_serv, std::string comment);
     ~MaintenanceRecord();
 
     //getters and setters
-    void set_id(size_t id);
-
-    size_t get_id() const;
 
     void set_services();
 
@@ -36,7 +32,7 @@ public:
     std::string get_comment() const;
 
     //methods
-    void demo() const;
+    void demo(size_t id_) const;
 };
 
 

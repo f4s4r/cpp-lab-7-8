@@ -43,5 +43,6 @@ void Track::demo() const
     std::cout << this->get_price() << " - rent price" << std::endl;
     std::cout << this->get_last_service() << " - last service" << std::endl;
     std::cout << this->get_max_to_lift() << " - maximum weight to lift" << std::endl;
+    this->record_.demo(this->get_id());
     std::cout << "------" << std::endl;
 }

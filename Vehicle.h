@@ -5,6 +5,7 @@
 #ifndef TRANSPORT_VEHICLE_H
 #define TRANSPORT_VEHICLE_H
 #include <iostream>
+#include "MaintenanceRecord.h"
 
 class Vehicle
 {
@@ -20,6 +21,7 @@ protected:
     std::string cur_user_;
     int price_;
     int last_service_;
+    MaintenanceRecord record_;
 
 public:
     // parameterless constructor realise
@@ -68,6 +70,26 @@ public:
     void set_last_service(int last_service);
 
     int get_last_service() const;
+
+
+    void set_services();
+
+//    std::string* get_services() const;
+
+    void set_num_serv(int num);
+
+    int get_num_serv() const;
+
+    void set_comment(std::string comment);
+
+    std::string get_comment() const;
+
+//    void add(size_t id);
+//
+//    void remove(size_t index);
+//
+//    void info() const;
+
     // methods
     virtual void demo() const;
 };

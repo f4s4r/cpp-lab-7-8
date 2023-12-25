@@ -10,6 +10,7 @@ class Vehicle_list {
 private:
     size_t* data_; //pointer
     size_t size_;
+
 public:
     // parameterless constructor
     Vehicle_list();

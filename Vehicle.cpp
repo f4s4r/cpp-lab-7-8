@@ -7,11 +7,12 @@
 
 
 Vehicle::Vehicle() // parameterless constructor realise
-        :id_(), brand_(), name_(), power_(0), status_(false), year_(0), run_(0), cur_user_("None"), price_(0), last_service_(0)
+        :id_(), brand_(), name_(), power_(0), status_(false), year_(0), run_(0), cur_user_("None"), price_(0), last_service_(0), record_()
 {}
 
 Vehicle::Vehicle(size_t id, std::string brand, std::string name, unsigned int power, bool status, unsigned int year, unsigned int run, std::string cur_user, int price, int last_service)
-        : id_(id), brand_(std::move(brand)), name_(std::move(name)), power_(power), status_(status), year_(year), run_(run), cur_user_(std::move(cur_user)), price_(price), last_service_(last_service)
+        : id_(id), brand_(std::move(brand)), name_(std::move(name)), power_(power), status_(status), year_(year), run_(run), cur_user_(std::move(cur_user)), price_(price), last_service_(last_service),
+          record_()
 {}
 
 
@@ -120,6 +121,46 @@ int Vehicle::get_last_service() const
     return last_service_;
 }
 
+//void Vehicle::set_id(size_t id)
+//{
+//    id_ = id;
+//}
+//
+//size_t Vehicle::get_id() const
+//{
+//    return id_;
+//}
+
+void Vehicle::set_services()
+{
+    this->record_.set_services();
+}
+
+//std::string* Vehicle::get_services() const
+//{
+//    return this->record_.get_services();
+//}
+
+void Vehicle::set_num_serv(int num)
+{
+    this->record_.set_num_serv(num);
+}
+
+int Vehicle::get_num_serv() const
+{
+    return this->record_.get_num_serv();
+}
+
+void Vehicle::set_comment(std::string comment)
+{
+    this->record_.set_comment(comment);
+}
+
+std::string Vehicle::get_comment() const
+{
+    return this->record_.get_comment();
+}
+
 // methods
 void Vehicle::demo() const
 {
@@ -134,5 +175,6 @@ void Vehicle::demo() const
     std::cout << this->get_cur_user() << " - current user" << std::endl;
     std::cout << this->get_price() << " - rent price" << std::endl;
     std::cout << this->get_last_service() << " - last service" << std::endl;
+    this->record_.demo();
     std::cout << "------" << std::endl;
 }

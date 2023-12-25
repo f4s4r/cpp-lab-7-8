@@ -68,3 +68,11 @@ void Customer::info() const
     this->list_.demo();
     std::cout << "----" << std::endl;
 }
+
+// operator
+
+//Customer Customer::operator+(const size_t& id)
+//{
+//    this->add(id);
+//    return *this;
+//}

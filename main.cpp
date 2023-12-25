@@ -4,6 +4,7 @@
 #include "Track.h"
 #include "Motorbike.h"
 #include "Customer.h"
+#include "MaintenanceRecord.h"
 
 int main(){
     // show works of setters, getters, constructor
@@ -44,4 +45,14 @@ int main(){
     ivan.remove(0);
     ivan.remove(2);
     ivan.info();
+
+//    MaintenanceRecord record(111, 3, "Good car");
+//    record.set_services();
+//    record.get_services();
+//    record.demo();
+    kawasakii.set_num_serv(2);
+    kawasakii.set_services();
+    kawasakii.demo();
+
+
 }

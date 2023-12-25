@@ -41,6 +41,9 @@ public:
     void remove(size_t index);
 
     void info() const;
+
+    //operator
+//    Customer operator+(const size_t& id);
 };
 
 

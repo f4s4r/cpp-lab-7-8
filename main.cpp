@@ -32,6 +32,16 @@ int main(){
     Motorbike kawasakii(04, "Kawasakii", "Cago", 100, true, 2015, 10000, "Kriko", 12000, 2019, TYPE_::SPORT);
     kawasakii.demo();
 
-    Customer ivan;
-
+    // show customer class
+    Customer ivan("Ivan");
+    ivan.info();
+    ivan.add(111);
+    ivan.info();
+    ivan.add(222);
+    ivan.add(333);
+    ivan.add(444);
+    ivan.info();
+    ivan.remove(0);
+    ivan.remove(2);
+    ivan.info();
 }

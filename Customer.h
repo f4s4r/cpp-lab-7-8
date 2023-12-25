@@ -1,7 +1,7 @@
 //
 // Created by 4s4r on 25.12.2023.
 //
-
+#include "Vehicle_list.h"
 #ifndef TRANSPORT_CUSTOMER_H
 #define TRANSPORT_CUSTOMER_H
 
@@ -11,13 +11,13 @@
 class Customer {
 private:
     std::string name_;
-    bool is_using_;
-    size_t id_using_;
+//    bool is_using_;
+    Vehicle_list list_;
 public:
     // parameterless constructor
     Customer();
     // constructor
-    Customer(std::string name, bool is_using, size_t id_using);
+    Customer(std::string name);
     // destructor
     ~Customer();
 
@@ -27,15 +27,19 @@ public:
 
     std::string get_name() const;
 
-    void set_is_using(bool is_using);
-
-    bool get_is_using() const;
+//    void set_is_using(bool is_using);
+//
+//    bool get_is_using() const;
 
     void set_id_using(size_t is_using);
 
     size_t get_id_using() const;
 
     //methods
+    void add(size_t id);
+
+    void remove(size_t index);
+
     void info() const;
 };
 

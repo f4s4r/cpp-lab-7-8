@@ -11,7 +11,6 @@
 class Customer {
 private:
     std::string name_;
-//    bool is_using_;
     Vehicle_list list_;
 public:
     // parameterless constructor

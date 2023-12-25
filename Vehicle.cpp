@@ -7,17 +7,18 @@
 
 
 Vehicle::Vehicle() // parameterless constructor realise
-        :brand_(), name_(), power_(0), status_(false), year_(0), run_(0), cur_user_("None"), price_(0), last_service_(0)
+        :id_(), brand_(), name_(), power_(0), status_(false), year_(0), run_(0), cur_user_("None"), price_(0), last_service_(0)
 {}
 
-Vehicle::Vehicle(std::string brand, std::string name, unsigned int power, bool status, unsigned int year, unsigned int run, std::string cur_user, int price, int last_service)
-        : brand_(std::move(brand)), name_(std::move(name)), power_(power), status_(status), year_(year), run_(run), cur_user_(std::move(cur_user)), price_(price), last_service_(last_service)
+Vehicle::Vehicle(size_t id, std::string brand, std::string name, unsigned int power, bool status, unsigned int year, unsigned int run, std::string cur_user, int price, int last_service)
+        : id_(id), brand_(std::move(brand)), name_(std::move(name)), power_(power), status_(status), year_(year), run_(run), cur_user_(std::move(cur_user)), price_(price), last_service_(last_service)
 {}
 
 
 
 Vehicle::~Vehicle() // destructor realise
 {
+    id_ = 0;
     brand_ = "";
     name_ = "";
     power_ = 0;
@@ -28,6 +29,17 @@ Vehicle::~Vehicle() // destructor realise
 }
 
 // getters and setters
+void Vehicle::set_id(unsigned int id)
+{
+    id_ = id;
+}
+
+size_t Vehicle::get_id() const
+{
+    return id_;
+}
+
+
 void Vehicle::set_brand(std::string brand)
 {
     brand_ = std::move(brand);
@@ -111,6 +123,9 @@ int Vehicle::get_last_service() const
 // methods
 void Vehicle::demo() const
 {
+    std::cout << "------" << std::endl;
+    std::cout << "Class - vehicle" << std::endl;
+    std::cout << this->get_id() << " - vehicle id" << std::endl;
     std::cout << this->get_brand()  << " - brand"  <<  std::endl;
     std::cout << this->get_name()   <<  " - name"  << std::endl;
     std::cout << this->get_power()  <<  " - power" << std::endl;
@@ -119,4 +134,5 @@ void Vehicle::demo() const
     std::cout << this->get_cur_user() << " - current user" << std::endl;
     std::cout << this->get_price() << " - rent price" << std::endl;
     std::cout << this->get_last_service() << " - last service" << std::endl;
+    std::cout << "------" << std::endl;
 }

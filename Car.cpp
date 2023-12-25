@@ -9,8 +9,8 @@ Car::Car() :
 {}
 
 // constructor realize
-Car::Car(std::string brand, std::string name, unsigned int power, bool status, unsigned int year, unsigned int run, std::string cur_user, int price, int last_service, int num_of_doors, int num_of_seats) :
-    Vehicle(std::move(brand), std::move(name), power, status, year, run, std::move(cur_user), price, last_service), num_of_doors_(num_of_doors), num_of_seats_(num_of_seats)
+Car::Car(size_t id, std::string brand, std::string name, unsigned int power, bool status, unsigned int year, unsigned int run, std::string cur_user, int price, int last_service, int num_of_doors, int num_of_seats) :
+    Vehicle(id, std::move(brand), std::move(name), power, status, year, run, std::move(cur_user), price, last_service), num_of_doors_(num_of_doors), num_of_seats_(num_of_seats)
 {}
 
 // destructor realise
@@ -47,6 +47,9 @@ int Car::get_num_of_seats() const
 
 void Car::demo() const
 {
+    std::cout << "------" << std::endl;
+    std::cout << "Class - car" << std::endl;
+    std::cout << this->get_id() << " - vehicle id" << std::endl;
     std::cout << this->get_brand()  << " - brand"  <<  std::endl;
     std::cout << this->get_name()   <<  " - name"  << std::endl;
     std::cout << this->get_power()  <<  " - power" << std::endl;
@@ -57,4 +60,5 @@ void Car::demo() const
     std::cout << this->get_last_service() << " - last service" << std::endl;
     std::cout << this->get_num_of_doors() << " - num of doors" << std::endl;
     std::cout << this->get_num_of_seats() << " - num of seats" << std::endl;
+    std::cout << "------" << std::endl;
 }

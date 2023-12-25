@@ -8,8 +8,8 @@ Track::Track() :
 {}
 
 // constructor realize
-Track::Track(std::string brand, std::string name, unsigned int power, bool status, unsigned int year, unsigned int run, std::string cur_user, int price, int last_service, int max_to_lift) :
-        Vehicle(std::move(brand), std::move(name), power, status, year, run, std::move(cur_user), price, last_service), max_to_lift_(max_to_lift)
+Track::Track(size_t id, std::string brand, std::string name, unsigned int power, bool status, unsigned int year, unsigned int run, std::string cur_user, int price, int last_service, int max_to_lift) :
+        Vehicle(id, std::move(brand), std::move(name), power, status, year, run, std::move(cur_user), price, last_service), max_to_lift_(max_to_lift)
 {}
 
 // destructor realise
@@ -31,6 +31,9 @@ int Track::get_max_to_lift() const
 //methods
 void Track::demo() const
 {
+    std::cout << "------" << std::endl;
+    std::cout << "Class - truck" << std::endl;
+    std::cout << this->get_id() << " - vehicle id" << std::endl;
     std::cout << this->get_brand()  << " - brand"  <<  std::endl;
     std::cout << this->get_name()   <<  " - name"  << std::endl;
     std::cout << this->get_power()  <<  " - power" << std::endl;
@@ -40,4 +43,5 @@ void Track::demo() const
     std::cout << this->get_price() << " - rent price" << std::endl;
     std::cout << this->get_last_service() << " - last service" << std::endl;
     std::cout << this->get_max_to_lift() << " - maximum weight to lift" << std::endl;
+    std::cout << "------" << std::endl;
 }

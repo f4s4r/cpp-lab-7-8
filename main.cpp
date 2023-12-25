@@ -3,10 +3,11 @@
 #include "Car.h"
 #include "Track.h"
 #include "Motorbike.h"
+#include "Customer.h"
 
 int main(){
     // show works of setters, getters, constructor
-    Vehicle car1("volvo", "s6", 100, true, 1999, 0, "Mihalych", 1200, 2011);
+    Vehicle car1(01, "volvo", "s6", 100, true, 1999, 0, "Mihalych", 1200, 2011);
     car1.demo();
     car1.set_brand("Aboba_brand");
     car1.set_name("Aboba_name");
@@ -19,17 +20,18 @@ int main(){
     std::cout << "--\n" << "End of demo Vehicle fields." << "\n--" << std::endl;
 
     // show works of setters, getters, constructor for class Car
-    Car car_kupe("Nissan", "Skyline", 420, true, 1990, 100000,"Grisha",  1211, 2011, 3, 2);
+    Car car_kupe(02, "Nissan", "Skyline", 420, true, 1990, 100000,"Grisha",  1211, 2011, 3, 2);
     car_kupe.demo();
 
     // show works of setters, getters, constructor for class Track
-    Track kamaz("Kamaz", "l1", 210, true, 2010, 1000000,"Peter",  2000, 2018, 1000);
+    Track kamaz(03, "Kamaz", "l1", 210, true, 2010, 1000000,"Peter",  2000, 2018, 1000);
     kamaz.demo();
 
 
     // show works of Moto-class
-    Motorbike kawasakii("Kawasakii", "Cago", 100, true, 2015, 10000, "Kriko", 12000, 2019, TYPE_::SPORT);
+    Motorbike kawasakii(04, "Kawasakii", "Cago", 100, true, 2015, 10000, "Kriko", 12000, 2019, TYPE_::SPORT);
     kawasakii.demo();
 
+    Customer ivan;
 
 }

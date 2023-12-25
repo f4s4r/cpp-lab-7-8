@@ -10,6 +10,7 @@ class Vehicle
 {
 protected:
     //fields
+    size_t id_;
     std::string brand_;
     std::string name_;
     unsigned int power_;
@@ -25,13 +26,17 @@ public:
     Vehicle();
 
     // constructor with parameters realise
-    Vehicle(std::string brand, std::string name, unsigned int power, bool status, unsigned int year, unsigned int run, std::string cur_user, int price, int last_service);
+    Vehicle(size_t id, std::string brand, std::string name, unsigned int power, bool status, unsigned int year, unsigned int run, std::string cur_user, int price, int last_service);
 
 
     // destructor
     ~Vehicle();
 
     // getters and setters
+    void set_id(unsigned int id);
+
+    size_t get_id() const;
+
     void set_brand(std::string brand);
 
     std::string get_brand() const;

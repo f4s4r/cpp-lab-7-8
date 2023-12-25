@@ -14,7 +14,7 @@ public:
     // parameterless constructor realise
     Track();
     // constructor realise
-    Track(std::string brand, std::string name, unsigned int power, bool status, unsigned int year, unsigned int run, std::string cur_user, int price, int last_service, int max_to_lift);
+    Track(size_t id, std::string brand, std::string name, unsigned int power, bool status, unsigned int year, unsigned int run, std::string cur_user, int price, int last_service, int max_to_lift);
     // destructor realise
     ~Track();
 

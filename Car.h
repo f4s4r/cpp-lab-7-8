@@ -16,7 +16,7 @@ public:
     // parameterless constructor realise
     Car();
     // constructor realise
-    Car(std::string brand, std::string name, unsigned int power, bool status, unsigned int year, unsigned int run, std::string cur_user, int price, int last_service, int num_of_doors, int num_of_seats);
+    Car(size_t id, std::string brand, std::string name, unsigned int power, bool status, unsigned int year, unsigned int run, std::string cur_user, int price, int last_service, int num_of_doors, int num_of_seats);
     // destructor realise
     ~Car();
 

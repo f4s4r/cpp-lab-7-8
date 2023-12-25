@@ -2,6 +2,7 @@
 #include "Vehicle.h"
 #include "Car.h"
 #include "Track.h"
+#include "Motorbike.h"
 
 int main(){
     // show works of setters, getters, constructor
@@ -24,5 +25,11 @@ int main(){
     // show works of setters, getters, constructor for class Track
     Track kamaz("Kamaz", "l1", 210, true, 2010, 1000000,"Peter",  2000, 2018, 1000);
     kamaz.demo();
+
+
+    // show works of Moto-class
+    Motorbike kawasakii("Kawasakii", "Cago", 100, true, 2015, 10000, "Kriko", 12000, 2019, TYPE_::SPORT);
+    kawasakii.demo();
+
 
 }

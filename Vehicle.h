@@ -84,12 +84,6 @@ public:
 
     std::string get_comment() const;
 
-//    void add(size_t id);
-//
-//    void remove(size_t index);
-//
-//    void info() const;
-
     // methods
     virtual void demo() const;
 };

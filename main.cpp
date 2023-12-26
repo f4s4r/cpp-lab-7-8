@@ -9,7 +9,6 @@
 int main() {
     std::string user_name;
     int num_of_veh, temp_choise;
-
     Motorbike kawasaki(10, "Kawasaki", "H2r", 326, false, 2020, 11000, "None", 19000, 2023, TYPE_::SPORT);
     Motorbike honda(11, "HONDA", "CRF300", 25, false, 2022, 33000, "None", 12000, 2023, TYPE_::ENDURO);
     Track volvo(20, "Volvo", "FH", 600, false, 2019, 1500300, "None", 50000, 2023, 12000);
